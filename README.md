@@ -68,6 +68,12 @@ First, install the dependencies for pico-sdk
 
    For details on what this script does, please see Pi Pico [Getting started guide](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf) chapter 1.
 
+ * Alpine:
+
+   ```bash
+   apk add git cmake gcc-arm-none-eabi newlib-arm-none-eabi
+   ```
+
  * MacOS:
 
    ```bash
@@ -88,7 +94,7 @@ Then checkout the code
 ```bash
 git clone https://github.com/zli117/PicoMK.git
 cd PicoMK
-git submodule update --init --recursive
+git submodule update --init && git -C pico-sdk submodule update --init
 ```
 The last command will checkout all the dependencies such as pico-sdk and FreeRTOS, so it might take a while depending on your internet connection.
 
